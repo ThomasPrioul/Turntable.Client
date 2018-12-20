@@ -16,9 +16,10 @@
                     QQuickStyle.SetStyle("Universal");
                 else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                     QQuickStyle.SetStyle("Material");
+
                 using (var engine = new QQmlApplicationEngine())
                 {
-                    Qml.RegisterType<MainViewModel>("viewModels");
+                    engine.SetContextProperty("app", new MainViewModel());
                     engine.Load("Views/main.qml");
                     return app.Exec();
                 }

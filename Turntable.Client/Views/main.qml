@@ -2,15 +2,13 @@
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Material 2.0
-import viewModels 1.0
 
 ApplicationWindow {
     id: window
     visible: true
     width: 640
     height: 480
-
-	Component.onCompleted: function() {		window.title = mainViewModel.title;    }
+	title : app.title
 
 	header: ToolBar {
 	    id: header
@@ -77,9 +75,5 @@ ApplicationWindow {
                 }
             }
 		}
-	}
-
-	MainViewModel {
-		id: mainViewModel
 	}
 }
